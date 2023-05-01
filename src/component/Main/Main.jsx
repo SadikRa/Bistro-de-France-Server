@@ -1,10 +1,15 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
+import Navbar from '../Navbar/Navbar';
+import { Outlet } from 'react-router-dom';
+import Footer from '../Footer/Footer';
 
 const Main = () => {
     return (
-        <div>
-            <h1>hi my name is sadik</h1>
+        <div className='container mx-auto'>
+            <Navbar></Navbar>
+            <Outlet></Outlet>
+            <Footer></Footer>
         </div>
     );
 };
