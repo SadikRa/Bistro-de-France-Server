@@ -14,6 +14,7 @@ import Home from './component/Home/Home';
 import Blog from './component/Blog/Blog';
 import Registration from './component/Login/Registration';
 import AuthProvider from './provider/AuthProvider';
+import Card from './component/Card/Card';
 
 const router = createBrowserRouter([
   {
@@ -23,11 +24,17 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('https://assessment-10-server-sadikra.vercel.app/chef')
       },
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: '/card',
+        element: <Card></Card>,
+        
       },
       {
         path: "/registration",

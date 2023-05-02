@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const Registration = () => {
+  const [error , setError] = useState("")
 
 const { createUser } = useContext(AuthContext)
 
@@ -14,6 +15,15 @@ const { createUser } = useContext(AuthContext)
         const email = form.email.value;
         const password = form.password.value;
 
+        if (!email || !password) {
+          setError('Email and password fields cannot be empty.');
+          return;
+        }
+       if (password.length < 6) {
+          setError('Password must be at least 6 characters');
+          console.log('Password must be at least 6 characters')
+          return;
+        }
         console.log(name, photo, email, password)
 
         createUser(email, password)
@@ -64,12 +74,14 @@ const { createUser } = useContext(AuthContext)
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
+          {error && <div className="alert alert-error">{error}</div>}
           <p>Already Have an Account? <Link to="/login">Login</Link></p>
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Registration</button>
         </div>
       </form>
+
       </div>
     </div>
   </div>

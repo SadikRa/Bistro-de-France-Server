@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
-
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 const Login = () => {
 
-    const { signIn } = useContext(AuthContext)
+    const { signIn , logInWithGoogle , logInWithGitHub} = useContext(AuthContext)
 
 
     const handleLogin = event => {
@@ -17,11 +17,18 @@ const Login = () => {
         signIn(email, password)
         .then(result =>{
             const loggedUser = result.user;
-            console.log(loggedUser)
+            Navigate('/', { replace: true });
         })
         .catch(error =>{
             console.log(error)
         })
+    }
+
+    const handleLoginWithGoogle = () =>{
+      logInWithGoogle()
+    }
+    const handleLoginWithGitHub = () =>{
+      logInWithGitHub()
     }
 
     return (
@@ -54,6 +61,8 @@ const Login = () => {
           <button className="btn btn-primary">Login</button>
         </div>
         </form>
+        <button onClick={handleLoginWithGoogle} className='my-3 btn btn-warning'> <FaGoogle /> Login with Google</button>
+            <button onClick={handleLoginWithGitHub} className='btn btn-warning' > <FaGithub></FaGithub> Login with Github</button>
       </div>
     </div>
   </div>
