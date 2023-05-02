@@ -1,16 +1,27 @@
-// eslint-disable-next-line no-unused-vars
 import React from 'react';
 
-const Login = () => {
+const Registration = () => {
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
-      <h1 className="text-5xl font-bold">Login Please</h1>
+      <h1 className="text-5xl font-bold">Registration Please</h1>
        </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <div className="card-body">
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Name</span>
+          </label>
+          <input type="text" placeholder="name" name='name' className="input input-bordered" />
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Photo Url</span>
+          </label>
+          <input type="text" placeholder="Photo Url" name='photo' className="input input-bordered" />
+        </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -37,4 +48,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Registration;
