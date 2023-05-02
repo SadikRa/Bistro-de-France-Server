@@ -1,12 +1,38 @@
 // eslint-disable-next-line no-unused-vars
 import React, { createContext } from 'react';
+import app from '../firebase/firebase.config';
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-const AuthContext = createContext(null)
+export const AuthContext = createContext(null)
 
-const AuthProvider = () => {
+const auth = getAuth(app)
+
+const AuthProvider = ({children}) => {
+
+
+    const createUser = (email, password) =>{
+        return createUserWithEmailAndPassword(auth, email, password)
+    }
+
+    const signIn = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password);
+    }
+
+
+const user = {name : 'sadik'}
+
+
+const authInfo ={
+    user,
+    createUser,
+    signIn,
+
+
+}
+
     return (
-        <AuthContext.Provider>
-            
+        <AuthContext.Provider value={authInfo}>
+            {children}
         </AuthContext.Provider>
     );
 };
