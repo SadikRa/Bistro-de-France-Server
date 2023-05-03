@@ -45,7 +45,19 @@ const MenuSection = () => {
         </div>
       </div>
 
-      
+      <div className="flex justify-center my-10  gap-20">
+        <div>
+          <h4 className="text-3xl">Lobster & Shrimp Quesadilla</h4>
+          <p className="w-96">
+            Lobster and tender shrimp, with onions, sweet peppers, spinach and
+            our three cheese blend. Griddled and served with tomato salsa and
+            sour cream.
+          </p>
+        </div>
+        <div>
+          <p className="text-primary">$12</p>
+        </div>
+      </div>
     </div>
   );
 };
