@@ -33,14 +33,15 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: 'card/:id',
+        path: '/card',
         element: <Card></Card>,
-        loader: ({params}) => fetch(`https://assessment-10-server-sadikra.vercel.app/chef/${params.id}`)
+        loader: () => fetch('https://assessment-10-server-sadikra.vercel.app/chef/')
         
       },
       {
-        path:'/chefDetails',
-        element: <ChefDetails></ChefDetails>
+        path:'/chefDetails/:id',
+        element: <ChefDetails></ChefDetails>,
+        loader: ({params}) => fetch(`https://assessment-10-server-sadikra.vercel.app/chef/${params.id}`)
       },
       {
         path: "/registration",

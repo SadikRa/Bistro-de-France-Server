@@ -4,8 +4,6 @@ import { useLoaderData, useParams } from 'react-router-dom';
 
 const Card = () => {
 
-    const { id } = useParams();
-
     const chefData = useLoaderData();
     // console.log(chefData)
 
