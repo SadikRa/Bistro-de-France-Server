@@ -10,6 +10,7 @@ const HomeHeader = () => {
           backgroundImage: `url(${backgroundImage})`,
           width: "100%",
           height: "800px",
+          borderRadius: '10px',
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
