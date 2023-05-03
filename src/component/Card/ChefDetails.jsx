@@ -30,7 +30,7 @@ const ChefDetails = () => {
                 </div>
            </div>
          </div>
-         <div className='my-20'>
+         <div className='my-20 grid md:grid-cols-3 gap-12'>
                 {
                     data.ViewRecipes.map((cards)=> <ChefDetailsCard cards={cards}></ChefDetailsCard>)
                 }

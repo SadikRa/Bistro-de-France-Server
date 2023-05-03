@@ -16,6 +16,7 @@ import Registration from './component/Login/Registration';
 import AuthProvider from './provider/AuthProvider';
 import Card from './component/Card/Card';
 import ChefDetails from './component/Card/ChefDetails';
+import PrivateRoute from './component/PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/chefDetails/:id',
-        element: <ChefDetails></ChefDetails>,
+        element: <PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
         loader: ({params}) => fetch(`https://assessment-10-server-sadikra.vercel.app/chef/${params.id}`)
       },
       {
