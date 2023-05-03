@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Blog = () => {
+
+    const {loading} = useContext(AuthContext)
+  
+    if (loading){
+    return  <> loading...  <progress className="progress w-56"></progress></>
+    }
+
   return (
     <div>
       <h1 className="text-3xl my-5">
