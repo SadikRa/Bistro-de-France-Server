@@ -1,7 +1,15 @@
 import React from 'react';
+import { FaRegStar, FaStar } from 'react-icons/fa';
+import Rating from 'react-rating';
+import { ToastContainer, toast } from 'react-toastify';
+ 
 
 const ChefDetailsCard = ({cards}) => {
-    console.log(cards.recipeImage)
+    
+
+    const notify = () => toast("Your favorite recipe successfully added");
+
+
     return (
         <div>
             <div className="card card-compact w-96 bg-base-100 shadow-xl">
@@ -13,10 +21,20 @@ const ChefDetailsCard = ({cards}) => {
           <li key={index}>{index + 1}. {ingredient}</li>
         ))}
       </ul>
-      <p>{cards.cookingMethod}</p>
-      <p>{cards.Rating}</p>
+      <p>Cooking Method:{cards.cookingMethod}</p>
+      <div className='flex-grow-1'>
+                    <Rating
+                        placeholderRating={cards.Rating}
+                        readonly
+                        emptySymbol={<FaRegStar></FaRegStar>}
+                        placeholderSymbol={<FaStar className='text-warning'></FaStar>}
+                        fullSymbol={<FaStar></FaStar>}
+                    ></Rating>
+                    <span> {cards?.Rating}</span>
+                </div>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Favorite button</button>
+      <button onClick={notify} className="btn btn-primary">Favorite button</button>
+      <ToastContainer />
     </div>
   </div>
 </div>

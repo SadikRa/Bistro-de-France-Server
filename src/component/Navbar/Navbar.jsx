@@ -7,6 +7,7 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const [isHovering, setIsHovering] = useState(false);
+  
 
 
   const handleMouseOver = () => {

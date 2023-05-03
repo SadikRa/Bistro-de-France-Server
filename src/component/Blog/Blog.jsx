@@ -1,16 +1,30 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+// import ReactToPdf from "react-to-pdf";
 
 const Blog = () => {
+  const { loading } = useContext(AuthContext);
 
-    const {loading} = useContext(AuthContext)
-  
-    if (loading){
-    return  <> loading...  <progress className="progress w-56"></progress></>
-    }
+  if (loading) {
+    return (
+      <>
+        {" "}
+        loading... <progress className="progress w-56"></progress>
+      </>
+    );
+  }
+
+  // const ref = useRef();
 
   return (
     <div>
+      {/* <div>
+      <ReactToPdf targetRef={ref} filename="div-blue.pdf">
+        {({ toPdf }) => <button onClick={toPdf}>Generate pdf</button>}
+      </ReactToPdf>
+      <div style={{ width: 500, height: 500, background: "blue" }} ref={ref} />
+    </div> */}
+
       <h1 className="text-3xl my-5">
         Question: Tell us the differences between uncontrolled and controlled
         components.

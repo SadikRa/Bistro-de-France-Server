@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 
 const CardDetails = ({data}) => {
 
@@ -8,7 +9,8 @@ const CardDetails = ({data}) => {
     return (
         <div>
             <div className="card card-compact w-96 bg-base-100 shadow-xl">
-  <figure><img className='rounded' src={chefPicture} alt="Shoes" /></figure>
+  <figure><LazyLoad height={200} offset={300}>
+  <img className='rounded' src={chefPicture} alt="Shoes" /></LazyLoad></figure>
   <div className="card-body">
     <h2 className="card-title">{chefName}</h2>
     <p>Years Of Experience:{yearsOfExperience}</p>

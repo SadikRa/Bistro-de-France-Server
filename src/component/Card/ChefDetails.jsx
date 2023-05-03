@@ -2,6 +2,7 @@ import React from 'react';
 import {  useLoaderData, useParams } from 'react-router-dom';
 import { FaThumbsUp  } from "react-icons/fa";
 import ChefDetailsCard from './ChefDetailsCard';
+import LazyLoad from 'react-lazy-load';
 const ChefDetails = () => {
 
 
@@ -17,7 +18,9 @@ const ChefDetails = () => {
          <div className='flex justify-center'>
          <div className=' flex sm:flex-col flex-col md:flex-row gap-20'>
                 <div>
+                    <LazyLoad height={600} offset={600}>
                     <img style={{width: "600px", height: "600px"}} className='rounded' src={data.chefPicture} alt=""  />
+                    </LazyLoad>
                 </div>
                 <div className='flex justify-center items-center'>
                 <div>

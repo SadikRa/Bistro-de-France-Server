@@ -17,6 +17,7 @@ import AuthProvider from './provider/AuthProvider';
 import Card from './component/Card/Card';
 import ChefDetails from './component/Card/ChefDetails';
 import PrivateRoute from './component/PrivateRoute/PrivateRoute';
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
   {
