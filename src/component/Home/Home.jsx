@@ -20,6 +20,7 @@ const Home = () => {
 
       <HomeHeader></HomeHeader>
       <HomePageCard></HomePageCard>
+      <h1 className="text-5xl text-center mb-12">Chef Details</h1>
       <Card></Card>
       <MenuSection></MenuSection>
     </div>
