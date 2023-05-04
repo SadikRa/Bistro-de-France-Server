@@ -7,8 +7,6 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const [isHovering, setIsHovering] = useState(false);
-  
-
 
   const handleMouseOver = () => {
     setIsHovering(true);
@@ -30,8 +28,28 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="flex-col md:flex-row gap-4 mx-auto">
-        <Link to="/">Home</Link>
-        <Link to="/blog">Blog </Link>
+        <NavLink
+          to="/"
+          style={({ isActive, isPending }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isPending ? "red" : "black",
+            };
+          }}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/blog"
+          style={({ isActive, isPending }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isPending ? "red" : "black",
+            };
+          }}
+        >
+          Blog
+        </NavLink>
       </div>
 
       {user ? (
